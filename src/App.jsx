@@ -1,16 +1,26 @@
-import { Button, useColorMode } from '@chakra-ui/react';
+import { Outlet } from 'react-router-dom';
+import { Box, Button, SimpleGrid } from '@chakra-ui/react';
 
+import NavBar from './components/NavBar';
+import { useStore } from './store';
 import './App.css';
 
-function App() {
-  const { toggleColorMode } = useColorMode();
+export default function App() {
+  const something = useStore((store) => store.something);
+  const toggleSomething = useStore((store) => store.toggleSomething);
 
   return (
-    <>
-      <h1>Hello There</h1>
-      <Button onClick={toggleColorMode}>Toggle Dark Mode</Button>
-    </>
+    <SimpleGrid columns={1} spacing={4}>
+      <Box>
+        <NavBar />
+      </Box>
+
+      <Box>
+        State thing: {something ? 'yes' : 'no'}{' '}
+        <Button onClick={toggleSomething}>Toggle</Button>
+      </Box>
+
+      <Outlet />
+    </SimpleGrid>
   );
 }
-
-export default App;
