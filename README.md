@@ -7,6 +7,8 @@
 - Chakra UI: https://v2.chakra-ui.com/getting-started/vite-guide
   - dark mode setup
 - React Router
+- Zustand
+  - persisted store setup
 
 ## Other Options
 
