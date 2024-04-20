@@ -1,8 +1,15 @@
-import { Box, Button, Flex, HStack, Spacer } from '@chakra-ui/react';
-import { useColorMode } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  useColorMode,
+} from '@chakra-ui/react';
+import { MoonIcon } from '@chakra-ui/icons';
 
 import ROUTES from '../router/routes';
-import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   const { toggleColorMode } = useColorMode();
@@ -22,11 +29,12 @@ export default function NavBar() {
           })}
         </HStack>
       </Box>
-      <Spacer />
-      <Box>
-        <Button onClick={toggleColorMode} colorScheme="teal">
-          Toggle dark mode
-        </Button>
+      <Box sx={{ position: 'absolute', right: 10 }}>
+        <IconButton
+          aria-label="Toggle dark mode"
+          onClick={toggleColorMode}
+          icon={<MoonIcon />}
+        />
       </Box>
     </Flex>
   );
