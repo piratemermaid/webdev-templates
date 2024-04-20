@@ -6,6 +6,7 @@
 - Prettier config and script to format all files
 - Chakra UI: https://v2.chakra-ui.com/getting-started/vite-guide
   - dark mode setup
+- React Router
 
 ## Other Options
 
