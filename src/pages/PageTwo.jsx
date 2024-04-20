@@ -1,7 +1,5 @@
+import PageLayout from '../components/PageLayout';
+
 export default function PageTwo() {
-  return (
-    <>
-      <h2>PageTwo</h2>
-    </>
-  );
+  return <PageLayout title="PageTwo">PageTwo content</PageLayout>;
 }
